@@ -26,7 +26,8 @@ namespace PhoenixService.ScheduleApi.Controllers
         /// <param name="requestId">ID запроса, сформировавшего дозвон</param>
         /// <returns>Специалист и дата его ближайшего доступного приема</returns>
         [HttpGet]
-        public async Task<SpecialistWithScheduleM> GetNearestAvailableAppointment(string requestId)
+        [Route("GetNearestAppointment")]
+        public async Task<SpecialistWithScheduleM> GetNearestAppointment(string requestId)
         {
             //return actionFactory.GetAction<IScheduleAction>().GetNearestAppointments(requestId);
             return await scheduleAction.GetNearestAppointments(requestId);
@@ -38,6 +39,7 @@ namespace PhoenixService.ScheduleApi.Controllers
         /// <param name="getSpecialistScheduleM"></param>
         /// <returns><see cref="AvailableAppointmentsM"/></returns>
         [HttpPost]
+        [Route("GetAvailableAppointments")]
         public async Task<AvailableAppointmentsM> GetAvailableAppointments(GetSpecialistScheduleM getSpecialistScheduleM)
         {
             return await scheduleAction.GetAvailableAppointments(getSpecialistScheduleM);

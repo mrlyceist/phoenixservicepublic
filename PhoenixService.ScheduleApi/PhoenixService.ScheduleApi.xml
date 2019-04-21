@@ -11,7 +11,7 @@
             <param name="takeAppointmentM"></param>
             <returns>true, в случае успешной записи, иначе - false</returns>
         </member>
-        <member name="M:PhoenixService.ScheduleApi.Controllers.ScheduleController.GetNearestAvailableAppointment(System.String)">
+        <member name="M:PhoenixService.ScheduleApi.Controllers.ScheduleController.GetNearestAppointment(System.String)">
             <summary>
             Возвращает специалиста, у которого был последний прием пациента и дату ближайшего возможного приема
             </summary>
