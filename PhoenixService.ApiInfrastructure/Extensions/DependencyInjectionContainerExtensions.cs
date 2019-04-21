@@ -6,7 +6,7 @@ using System.Reflection;
 using LightInject;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace PhoenixService.ScheduleApi
+namespace PhoenixService.ApiInfrastructure.Extensions
 {
     public static class DependencyInjectionContainerExtensions
     {

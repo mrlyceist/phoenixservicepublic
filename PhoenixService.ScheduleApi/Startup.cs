@@ -5,9 +5,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PhoenixService.ApiInfrastructure.Extensions;
 using PhoenixService.ScheduleApi.Configurations;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
+using System.IO;
+using System.Reflection;
+using PhoenixService.ApiInfrastructure;
 
 namespace PhoenixService.ScheduleApi
 {
@@ -41,8 +45,15 @@ namespace PhoenixService.ScheduleApi
                     .Services
                     .AddSwaggerGen(c =>
                     {
-                        c.SwaggerDoc("v1", new Info { Title = hostingEnvironment.ApplicationName });
+                        c.SwaggerDoc("v1", new Info {Title = hostingEnvironment.ApplicationName});
+                        var dir = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
+                        foreach (var file in dir.EnumerateFiles("*.xml"))
+                            c.IncludeXmlComments(file.FullName);
                     }));
+
+            serviceContainer.RegisterTypes();
+            serviceContainer.EnableAutoFactories();
+            serviceContainer.RegisterAutoFactory<IActionFactory>();
 
             var serviceProvider = serviceContainer.CreateServiceProvider(services);
             return serviceProvider;

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PhoenixService.ScheduleApi</name>
+    </assembly>
+    <members>
+        <member name="M:PhoenixService.ScheduleApi.Controllers.ScheduleController.GetNearestAvailableAppointment(System.String)">
+            <summary>
+            Возвращает специалиста, у которого был последний прием пациента и дату ближайшего возможного приема
+            </summary>
+            <param name="requestId">ID запроса, сформировавшего дозвон</param>
+            <returns>Специалист и дата его ближайшего доступного приема</returns>
+        </member>
+    </members>
+</doc>

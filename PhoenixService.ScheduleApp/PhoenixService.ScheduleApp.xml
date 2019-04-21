@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PhoenixService.ScheduleApp</name>
+    </assembly>
+    <members>
+        <member name="P:PhoenixService.ScheduleApp.Dto.SpecialistWithScheduleM.SpecialistId">
+            <summary>
+            Id специалиста
+            </summary>
+        </member>
+        <member name="P:PhoenixService.ScheduleApp.Dto.SpecialistWithScheduleM.Speciality">
+            <summary>
+            Специальность
+            </summary>
+        </member>
+        <member name="P:PhoenixService.ScheduleApp.Dto.SpecialistWithScheduleM.Name">
+            <summary>
+            Имя специалиста (по возможности - ФИО)
+            </summary>
+        </member>
+        <member name="P:PhoenixService.ScheduleApp.Dto.SpecialistWithScheduleM.NearestFreeAppointmentDate">
+            <summary>
+            Дата ближайшего доступного для записи приема
+            </summary>
+        </member>
+    </members>
+</doc>
