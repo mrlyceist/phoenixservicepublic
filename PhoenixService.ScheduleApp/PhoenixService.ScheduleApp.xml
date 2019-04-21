@@ -4,9 +4,34 @@
         <name>PhoenixService.ScheduleApp</name>
     </assembly>
     <members>
+        <member name="P:PhoenixService.ScheduleApp.Dto.AvailableAppointmentsM.SpecialistId">
+            <summary>
+            ID Специалиста
+            </summary>
+        </member>
+        <member name="P:PhoenixService.ScheduleApp.Dto.AvailableAppointmentsM.AvailableAppointments">
+            <summary>
+            Доступные приемы (время начала приема) - максимум 5
+            </summary>
+        </member>
+        <member name="P:PhoenixService.ScheduleApp.Dto.GetSpecialistScheduleM.SpecialistId">
+            <summary>
+            ID Специалиста
+            </summary>
+        </member>
+        <member name="P:PhoenixService.ScheduleApp.Dto.GetSpecialistScheduleM.RequestId">
+            <summary>
+            ID запроса, сформировавшего дозвон
+            </summary>
+        </member>
+        <member name="P:PhoenixService.ScheduleApp.Dto.GetSpecialistScheduleM.WantedDate">
+            <summary>
+            Желаемая дата приема
+            </summary>
+        </member>
         <member name="P:PhoenixService.ScheduleApp.Dto.SpecialistWithScheduleM.SpecialistId">
             <summary>
-            Id специалиста
+            ID Специалиста
             </summary>
         </member>
         <member name="P:PhoenixService.ScheduleApp.Dto.SpecialistWithScheduleM.Speciality">
@@ -22,6 +47,21 @@
         <member name="P:PhoenixService.ScheduleApp.Dto.SpecialistWithScheduleM.NearestFreeAppointmentDate">
             <summary>
             Дата ближайшего доступного для записи приема
+            </summary>
+        </member>
+        <member name="P:PhoenixService.ScheduleApp.Dto.TakeAppointmentM.RequestId">
+            <summary>
+            ID запроса, сформировавшего дозвон
+            </summary>
+        </member>
+        <member name="P:PhoenixService.ScheduleApp.Dto.TakeAppointmentM.SpecialistId">
+            <summary>
+            ID Специалиста
+            </summary>
+        </member>
+        <member name="P:PhoenixService.ScheduleApp.Dto.TakeAppointmentM.Appointment">
+            <summary>
+            Желаемое время начала приема (с датой)
             </summary>
         </member>
     </members>

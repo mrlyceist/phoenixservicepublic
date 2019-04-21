@@ -11,12 +11,13 @@ namespace PhoenixService.ScheduleApi.Controllers
     public class ScheduleController : ControllerBase
     {
         private readonly IActionFactory actionFactory;
-        private readonly IAppointmentsAction appointmentsAction;
+        private readonly IScheduleAction scheduleAction;
 
-        public ScheduleController(IActionFactory actionFactory, IAppointmentsAction appointmentsAction)
+        public ScheduleController(IActionFactory actionFactory,
+            IScheduleAction scheduleAction)
         {
             this.actionFactory = actionFactory;
-            this.appointmentsAction = appointmentsAction;
+            this.scheduleAction = scheduleAction;
         }
 
         /// <summary>
@@ -25,42 +26,21 @@ namespace PhoenixService.ScheduleApi.Controllers
         /// <param name="requestId">ID запроса, сформировавшего дозвон</param>
         /// <returns>Специалист и дата его ближайшего доступного приема</returns>
         [HttpGet]
-        public Task<SpecialistWithScheduleM> GetNearestAvailableAppointment(string requestId)
+        public async Task<SpecialistWithScheduleM> GetNearestAvailableAppointment(string requestId)
         {
-            //return actionFactory.GetAction<IAppointmentsAction>().GetNearestAppointments(requestId);
-            return appointmentsAction.GetNearestAppointments(requestId);
+            //return actionFactory.GetAction<IScheduleAction>().GetNearestAppointments(requestId);
+            return await scheduleAction.GetNearestAppointments(requestId);
         }
 
-        //// GET api/values
-        //[HttpGet]
-        //public ActionResult<IEnumerable<string>> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
-        //// GET api/values/5
-        //[HttpGet("{id}")]
-        //public ActionResult<string> Get(int id)
-        //{
-        //    return "value";
-        //}
-
-        //// POST api/values
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
-
-        //// PUT api/values/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
-
-        //// DELETE api/values/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
+        /// <summary>
+        /// Возвращает доступные приемы у специалиста
+        /// </summary>
+        /// <param name="getSpecialistScheduleM"></param>
+        /// <returns><see cref="AvailableAppointmentsM"/></returns>
+        [HttpPost]
+        public async Task<AvailableAppointmentsM> GetAvailableAppointments(GetSpecialistScheduleM getSpecialistScheduleM)
+        {
+            return await scheduleAction.GetAvailableAppointments(getSpecialistScheduleM);
+        }
     }
 }

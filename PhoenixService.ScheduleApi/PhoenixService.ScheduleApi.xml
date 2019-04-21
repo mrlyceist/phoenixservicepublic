@@ -4,12 +4,26 @@
         <name>PhoenixService.ScheduleApi</name>
     </assembly>
     <members>
+        <member name="M:PhoenixService.ScheduleApi.Controllers.AppointmentsController.TakeAppointment(PhoenixService.ScheduleApp.Dto.TakeAppointmentM)">
+            <summary>
+            Делает попытку занять прием у специалиста на выбранную дату и время
+            </summary>
+            <param name="takeAppointmentM"></param>
+            <returns>true, в случае успешной записи, иначе - false</returns>
+        </member>
         <member name="M:PhoenixService.ScheduleApi.Controllers.ScheduleController.GetNearestAvailableAppointment(System.String)">
             <summary>
             Возвращает специалиста, у которого был последний прием пациента и дату ближайшего возможного приема
             </summary>
             <param name="requestId">ID запроса, сформировавшего дозвон</param>
             <returns>Специалист и дата его ближайшего доступного приема</returns>
+        </member>
+        <member name="M:PhoenixService.ScheduleApi.Controllers.ScheduleController.GetAvailableAppointments(PhoenixService.ScheduleApp.Dto.GetSpecialistScheduleM)">
+            <summary>
+            Возвращает доступные приемы у специалиста
+            </summary>
+            <param name="getSpecialistScheduleM"></param>
+            <returns><see cref="T:PhoenixService.ScheduleApp.Dto.AvailableAppointmentsM"/></returns>
         </member>
     </members>
 </doc>
