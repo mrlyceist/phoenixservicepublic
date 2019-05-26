@@ -13,7 +13,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoenixService.ScheduleApp"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{56D9B3DE-4E8B-4299-BA6B-3CC8141EA5C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoenixService.ApiInfrastructure", "PhoenixService.ApiInfrastructure\PhoenixService.ApiInfrastructure.csproj", "{A0385C9D-843F-40AE-993E-A6ADE0772D4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoenixService.ApiInfrastructure", "PhoenixService.ApiInfrastructure\PhoenixService.ApiInfrastructure.csproj", "{A0385C9D-843F-40AE-993E-A6ADE0772D4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoenixService.Data", "PhoenixService.Data\PhoenixService.Data.csproj", "{F8380201-9B1A-4EF2-8C6F-154FB0F7CD75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoenixService.Domain", "PhoenixService.Domain\PhoenixService.Domain.csproj", "{570172F5-1C60-4524-9B40-37045BB58C7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interfaces", "Interfaces", "{179360F9-4B58-404C-9622-B4297F55D0A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoenixService.Application.Interfaces", "PhoenixService.Application.Interfaces\PhoenixService.Application.Interfaces.csproj", "{78F5E866-A1BB-4CCB-BA5D-F3825A5D9132}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoenixService.Data.Interfaces", "PhoenixService.Data.Interfaces\PhoenixService.Data.Interfaces.csproj", "{B7D13226-FCB9-492E-B008-8DCABDC05CF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +43,22 @@ Global
 		{A0385C9D-843F-40AE-993E-A6ADE0772D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0385C9D-843F-40AE-993E-A6ADE0772D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0385C9D-843F-40AE-993E-A6ADE0772D4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8380201-9B1A-4EF2-8C6F-154FB0F7CD75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8380201-9B1A-4EF2-8C6F-154FB0F7CD75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8380201-9B1A-4EF2-8C6F-154FB0F7CD75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8380201-9B1A-4EF2-8C6F-154FB0F7CD75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{570172F5-1C60-4524-9B40-37045BB58C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{570172F5-1C60-4524-9B40-37045BB58C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{570172F5-1C60-4524-9B40-37045BB58C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{570172F5-1C60-4524-9B40-37045BB58C7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78F5E866-A1BB-4CCB-BA5D-F3825A5D9132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78F5E866-A1BB-4CCB-BA5D-F3825A5D9132}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78F5E866-A1BB-4CCB-BA5D-F3825A5D9132}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78F5E866-A1BB-4CCB-BA5D-F3825A5D9132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7D13226-FCB9-492E-B008-8DCABDC05CF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7D13226-FCB9-492E-B008-8DCABDC05CF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7D13226-FCB9-492E-B008-8DCABDC05CF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7D13226-FCB9-492E-B008-8DCABDC05CF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +67,10 @@ Global
 		{3AB0D36C-3575-4EBE-99FA-57742760A53A} = {56D9B3DE-4E8B-4299-BA6B-3CC8141EA5C7}
 		{CE883F68-22ED-4161-88B0-770DD154F49A} = {A3395139-BFE6-42C1-870E-BF4C3EB096F5}
 		{A0385C9D-843F-40AE-993E-A6ADE0772D4D} = {56D9B3DE-4E8B-4299-BA6B-3CC8141EA5C7}
+		{F8380201-9B1A-4EF2-8C6F-154FB0F7CD75} = {56D9B3DE-4E8B-4299-BA6B-3CC8141EA5C7}
+		{570172F5-1C60-4524-9B40-37045BB58C7F} = {E7DA8B89-1BC7-4A53-815D-8DD3F9A15FB4}
+		{78F5E866-A1BB-4CCB-BA5D-F3825A5D9132} = {179360F9-4B58-404C-9622-B4297F55D0A7}
+		{B7D13226-FCB9-492E-B008-8DCABDC05CF9} = {179360F9-4B58-404C-9622-B4297F55D0A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9CADF5F0-7352-4670-9669-9F6A01C4850C}

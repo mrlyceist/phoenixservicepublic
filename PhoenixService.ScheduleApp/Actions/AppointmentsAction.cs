@@ -8,7 +8,7 @@ namespace PhoenixService.ScheduleApp.Actions
     {
         public Task<bool> TakeAppointment(TakeAppointmentM takeAppointmentM)
         {
-            return Task.FromResult(true);
+            
         }
     }
 }
