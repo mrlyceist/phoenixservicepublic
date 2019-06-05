@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PhoenixService.ApiInfrastructure\PhoenixService.ApiInfrastructure.csproj" />
+    <ProjectReference Include="..\PhoenixService.Data.Interfaces\PhoenixService.Data.Interfaces.csproj" />
     <ProjectReference Include="..\PhoenixService.ScheduleApp\PhoenixService.ScheduleApp.csproj" />
   </ItemGroup>
 

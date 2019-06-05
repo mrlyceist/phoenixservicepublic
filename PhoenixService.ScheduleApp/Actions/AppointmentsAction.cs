@@ -1,6 +1,7 @@
 ﻿using PhoenixService.ScheduleApp.Dto;
-using System.Threading.Tasks;
 using PhoenixService.ScheduleApp.Specifications.Actions;
+using System;
+using System.Threading.Tasks;
 
 namespace PhoenixService.ScheduleApp.Actions
 {
@@ -8,7 +9,7 @@ namespace PhoenixService.ScheduleApp.Actions
     {
         public Task<bool> TakeAppointment(TakeAppointmentM takeAppointmentM)
         {
-            
+            throw new NotImplementedException();
         }
     }
 }
