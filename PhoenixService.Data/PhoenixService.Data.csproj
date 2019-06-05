@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bit.NCore, Version=3.0.25.67, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bit.NCore.3.1.27\lib\net40\Bit.NCore.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,6 +56,9 @@
       <Project>{570172F5-1C60-4524-9B40-37045BB58C7F}</Project>
       <Name>PhoenixService.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
