@@ -12,7 +12,6 @@ namespace PhoenixService.Data.Resolvers
 {
     public class AppointmentsResolver : IAppointmentsResolver
     {
-        private readonly IDataConfiguration configuration;
         private readonly IIVoiceDuty iVoiceDuty;
         private readonly IAppointmentFactory appointmentFactory;
         private readonly ISpecialistResolver specialistResolver;
@@ -25,7 +24,6 @@ namespace PhoenixService.Data.Resolvers
             ISpecialistResolver specialistResolver,
             IScheduleService scheduleService)
         {
-            this.configuration = configuration;
             this.iVoiceDuty = iVoiceDuty;
             this.appointmentFactory = appointmentFactory;
             this.specialistResolver = specialistResolver;

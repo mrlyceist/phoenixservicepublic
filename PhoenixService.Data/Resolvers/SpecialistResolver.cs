@@ -3,9 +3,9 @@ using NCore.Specifications;
 using NCore.Specifications.Factories;
 using PhoenixService.Data.Interfaces;
 using PhoenixService.Data.Interfaces.Factories;
+using PhoenixService.Data.Interfaces.Resolvers;
 using PhoenixService.Domain;
 using System;
-using PhoenixService.Data.Interfaces.Resolvers;
 
 namespace PhoenixService.Data.Resolvers
 {
@@ -13,8 +13,6 @@ namespace PhoenixService.Data.Resolvers
     {
         private readonly IEntityFactory<Employee> employeeFactory;
         private readonly ISpecialistFactory specialistFactory;
-        private readonly IDataConfiguration configuration;
-        private readonly IFoxDbInteractor foxDbInteractor;
         private readonly IEntityFactory<Specialty> specialtyFactory;
 
         public SpecialistResolver(IEntityFactory<Employee> employeeFactory,
@@ -25,15 +23,12 @@ namespace PhoenixService.Data.Resolvers
         {
             this.employeeFactory = employeeFactory;
             this.specialistFactory = specialistFactory;
-            this.configuration = configuration;
-            this.foxDbInteractor = foxDbInteractor;
             this.specialtyFactory = specialtyFactory;
+            foxDbInteractor.InitializeConnection(configuration.PhoenixExecutablePath);
         }
 
         public Specialist GetByPhoenixId(string phoenixId)
         {
-            foxDbInteractor.InitializeConnection(configuration.PhoenixExecutablePath);
-
             var employee = employeeFactory.GetFromDb(phoenixId);
             if (employee == null)
                 throw new Exception("Specialist not found");

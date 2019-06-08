@@ -4,26 +4,26 @@
         <name>PhoenixService.ScheduleApi</name>
     </assembly>
     <members>
-        <member name="M:PhoenixService.ScheduleApi.Controllers.AppointmentDateTimesController.TakeAppointmentDateTime(PhoenixService.ScheduleApp.Dto.TakeAppointmentDateTimeM)">
+        <member name="M:PhoenixService.ScheduleApi.Controllers.AppointmentsController.TakeAppointment(PhoenixService.ScheduleApp.Dto.TakeAppointmentM)">
             <summary>
             Делает попытку занять прием у специалиста на выбранную дату и время
             </summary>
-            <param name="takeAppointmentDateTimeM"></param>
+            <param name="takeAppointmentM"></param>
             <returns>true, в случае успешной записи, иначе - false</returns>
         </member>
-        <member name="M:PhoenixService.ScheduleApi.Controllers.ScheduleController.GetNearestAppointmentDateTime(System.String)">
+        <member name="M:PhoenixService.ScheduleApi.Controllers.ScheduleController.GetNearestAppointment(System.String)">
             <summary>
             Возвращает специалиста, у которого был последний прием пациента и дату ближайшего возможного приема
             </summary>
             <param name="requestId">ID запроса, сформировавшего дозвон</param>
             <returns>Специалист и дата его ближайшего доступного приема</returns>
         </member>
-        <member name="M:PhoenixService.ScheduleApi.Controllers.ScheduleController.GetAvailableAppointmentDateTimes(PhoenixService.ScheduleApp.Dto.GetSpecialistScheduleM)">
+        <member name="M:PhoenixService.ScheduleApi.Controllers.ScheduleController.GetAvailableAppointments(PhoenixService.ScheduleApp.Dto.GetAppointmentsM)">
             <summary>
-            Возвращает доступные приемы у специалиста
+            Возвращает доступные приемы для заданного RequestId на желаемую дату
             </summary>
-            <param name="getSpecialistScheduleM"></param>
-            <returns><see cref="T:PhoenixService.ScheduleApp.Dto.AvailableAppointmentDateTimesM"/></returns>
+            <param name="getAppointmentsM"></param>
+            <returns><see cref="T:PhoenixService.ScheduleApp.Dto.AvailableAppointmentsM"/></returns>
         </member>
     </members>
 </doc>

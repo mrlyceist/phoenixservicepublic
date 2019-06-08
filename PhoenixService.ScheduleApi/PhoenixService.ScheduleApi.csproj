@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bit.NCore" Version="3.3.30" />
     <PackageReference Include="LightInject.AutoFactory" Version="2.0.0" />
     <PackageReference Include="LightInject.Microsoft.DependencyInjection" Version="2.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
@@ -25,6 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\PhoenixService.ApiInfrastructure\PhoenixService.ApiInfrastructure.csproj" />
     <ProjectReference Include="..\PhoenixService.Data.Interfaces\PhoenixService.Data.Interfaces.csproj" />
+    <ProjectReference Include="..\PhoenixService.Data\PhoenixService.Data.csproj" />
     <ProjectReference Include="..\PhoenixService.ScheduleApp\PhoenixService.ScheduleApp.csproj" />
   </ItemGroup>
 
