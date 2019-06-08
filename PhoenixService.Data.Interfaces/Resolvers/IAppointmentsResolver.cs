@@ -1,9 +1,10 @@
 ﻿using PhoenixService.Domain;
+using System.Threading.Tasks;
 
 namespace PhoenixService.Data.Interfaces.Resolvers
 {
     public interface IAppointmentsResolver
     {
-        Appointment[] GetNearestByRequestId(string requestId);
+        Task<Appointment[]> GetNearestByRequestId(string requestId);
     }
 }

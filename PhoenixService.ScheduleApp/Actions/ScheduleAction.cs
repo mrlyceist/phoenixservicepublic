@@ -1,40 +1,38 @@
 ﻿using PhoenixService.ScheduleApp.Dto;
 using PhoenixService.ScheduleApp.Specifications.Actions;
-using System;
+using PhoenixService.ScheduleApp.Specifications.Builders;
+using PhoenixService.ScheduleApp.Specifications.Services;
 using System.Threading.Tasks;
 
 namespace PhoenixService.ScheduleApp.Actions
 {
     public class ScheduleAction : IScheduleAction
     {
-        public Task<SpecialistWithScheduleM> GetNearestAppointments(string requestId)
-        {
-            var nextAppointment = new SpecialistWithScheduleM
-            {
-                Name = "Чехов Антон Павлович",
-                SpecialistId = "C0ECF9D8-5DAA-43C0-B255-5DD52884A0CD",
-                Speciality = "Специалист широкого профиля",
-                NearestFreeAppointmentDate = new DateTime(2019, 5, 1),
-            };
+        private readonly IAppointmentsService appointmentsService;
+        private readonly IAvailableAppointmentsMBuilder availableAppointmentsMBuilder;
+        private readonly ISpecialistWithScheduleMBuilder specialistWithScheduleMBuilder;
 
-            return Task.FromResult(nextAppointment);
+        public ScheduleAction(IAvailableAppointmentsMBuilder availableAppointmentsMBuilder,
+            IAppointmentsService appointmentsService,
+            ISpecialistWithScheduleMBuilder specialistWithScheduleMBuilder)
+        {
+            this.availableAppointmentsMBuilder = availableAppointmentsMBuilder;
+            this.appointmentsService = appointmentsService;
+            this.specialistWithScheduleMBuilder = specialistWithScheduleMBuilder;
         }
 
-        public Task<AvailableAppointmentsM> GetAvailableAppointments(GetSpecialistScheduleM getSpecialistScheduleM)
+        public async Task<SpecialistWithScheduleM> GetNearestAppointments(string requestId)
         {
-            var appointments = new AvailableAppointmentsM
-            {
-                SpecialistId = "C0ECF9D8-5DAA-43C0-B255-5DD52884A0CD",
-                AvailableAppointments = new[]
-                {
-                    new DateTime(2019, 5, 1, 11, 30, 0),
-                    new DateTime(2019, 5, 1, 13, 45, 0),
-                    new DateTime(2019, 5, 2, 11, 30, 0),
-                    new DateTime(2019, 5, 3, 9, 30, 0),
-                }
-            };
+            var nearestAppointment = await appointmentsService.GetNearestByRequestIdAsync(requestId);
 
-            return Task.FromResult(appointments);
+            return specialistWithScheduleMBuilder.Build(nearestAppointment);
+        }
+
+        public async Task<AvailableAppointmentsM> GetAvailableAppointments(GetAppointmentsM getAppointmentsM)
+        {
+            var appintments = await appointmentsService.GetAvailableByDate(getAppointmentsM);
+
+            return availableAppointmentsMBuilder.Build(getAppointmentsM.RequestId, appintments);
         }
     }
 }

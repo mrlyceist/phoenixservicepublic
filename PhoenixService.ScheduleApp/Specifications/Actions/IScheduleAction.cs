@@ -6,6 +6,6 @@ namespace PhoenixService.ScheduleApp.Specifications.Actions
     public interface IScheduleAction
     {
         Task<SpecialistWithScheduleM> GetNearestAppointments(string requestId);
-        Task<AvailableAppointmentsM> GetAvailableAppointments(GetSpecialistScheduleM getSpecialistScheduleM);
+        Task<AvailableAppointmentsM> GetAvailableAppointments(GetAppointmentsM getSpecialistScheduleM);
     }
 }

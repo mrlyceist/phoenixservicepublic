@@ -1,16 +1,14 @@
-﻿using System;
-
-namespace PhoenixService.ScheduleApp.Dto
+﻿namespace PhoenixService.ScheduleApp.Dto
 {
     public class AvailableAppointmentsM
     {
         /// <summary>
-        /// ID Специалиста
+        /// ID запроса, сформировавшего дозвон
         /// </summary>
-        public string SpecialistId { get; set; }
+        public string RequestId { get; set; }
         /// <summary>
         /// Доступные приемы (время начала приема) - максимум 5
         /// </summary>
-        public DateTime[] AvailableAppointments { get; set; }
+        public AppointmentM[] AvailableAppointments { get; set; }
     }
 }

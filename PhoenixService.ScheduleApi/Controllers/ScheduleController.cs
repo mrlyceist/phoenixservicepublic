@@ -29,20 +29,19 @@ namespace PhoenixService.ScheduleApi.Controllers
         [Route("GetNearestAppointment")]
         public async Task<SpecialistWithScheduleM> GetNearestAppointment(string requestId)
         {
-            //return actionFactory.GetAction<IScheduleAction>().GetNearestAppointments(requestId);
             return await scheduleAction.GetNearestAppointments(requestId);
         }
 
         /// <summary>
-        /// Возвращает доступные приемы у специалиста
+        /// Возвращает доступные приемы для заданного RequestId на желаемую дату
         /// </summary>
-        /// <param name="getSpecialistScheduleM"></param>
+        /// <param name="getAppointmentsM"></param>
         /// <returns><see cref="AvailableAppointmentsM"/></returns>
         [HttpPost]
         [Route("GetAvailableAppointments")]
-        public async Task<AvailableAppointmentsM> GetAvailableAppointments(GetSpecialistScheduleM getSpecialistScheduleM)
+        public async Task<AvailableAppointmentsM> GetAvailableAppointments(GetAppointmentsM getAppointmentsM)
         {
-            return await scheduleAction.GetAvailableAppointments(getSpecialistScheduleM);
+            return await scheduleAction.GetAvailableAppointments(getAppointmentsM);
         }
     }
 }

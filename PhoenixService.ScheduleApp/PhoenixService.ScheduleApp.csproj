@@ -8,4 +8,8 @@
     <DocumentationFile>E:\dev\dotNet\PhoenixService\PhoenixService.ScheduleApp\PhoenixService.ScheduleApp.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PhoenixService.Data.Interfaces\PhoenixService.Data.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -7,7 +7,7 @@ namespace PhoenixService.Data.Factories
 {
     public class AppointmentFactory : IAppointmentFactory
     {
-        public Appointment Build(DateTime dateTimeStart,
+        public Appointment Create(DateTime dateTimeStart,
             DateTime dateTimeEnd,
             Specialist specialist = null,
             Patient patient = null,

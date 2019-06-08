@@ -4,10 +4,10 @@ namespace PhoenixService.ScheduleApp.Dto
 {
     public class SpecialistWithScheduleM
     {
-        /// <summary>
-        /// ID Специалиста
-        /// </summary>
-        public string SpecialistId { get; set; }
+        ///// <summary> TODO
+        ///// ID Специалиста
+        ///// </summary>
+        //public string SpecialistId { get; set; }
         /// <summary>
         /// Специальность
         /// </summary>
