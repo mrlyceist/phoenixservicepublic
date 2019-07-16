@@ -205,8 +205,14 @@ a {
     </head>
     <body>
         <h1>An unhandled exception occurred while processing the request.</h1>
-            <div class="titleerror">TypeLoadException: Could not load type &#x27;System.Data.OleDb.OleDbConnection&#x27; from assembly &#x27;System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&#x27;.</div>
-                <p class="location">NCore.FoxDbInteractor..ctor()</p>
+            <div class="titleerror">InvalidOperationException: Unresolved dependency [Target Type: PhoenixService.ScheduleApp.Services.AppointmentsService], [Parameter: appointmentsResolver(PhoenixService.Data.Interfaces.Resolvers.IAppointmentsResolver)], [Requested dependency: ServiceType:PhoenixService.Data.Interfaces.Resolvers.IAppointmentsResolver, ServiceName:]</div>
+                <p class="location">LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)</p>
+            <div class="titleerror">InvalidOperationException: Unresolved dependency [Target Type: PhoenixService.ScheduleApp.Actions.ScheduleAction], [Parameter: appointmentsService(PhoenixService.ScheduleApp.Specifications.Services.IAppointmentsService)], [Requested dependency: ServiceType:PhoenixService.ScheduleApp.Specifications.Services.IAppointmentsService, ServiceName:]</div>
+                <p class="location">LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)</p>
+            <div class="titleerror">InvalidOperationException: Unresolved dependency [Target Type: PhoenixService.ScheduleApi.Controllers.ScheduleController], [Parameter: scheduleAction(PhoenixService.ScheduleApp.Specifications.Actions.IScheduleAction)], [Requested dependency: ServiceType:PhoenixService.ScheduleApp.Specifications.Actions.IScheduleAction, ServiceName:]</div>
+                <p class="location">LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)</p>
+            <div class="titleerror">InvalidOperationException: Unable to resolve type: PhoenixService.ScheduleApi.Controllers.ScheduleController, service name: </div>
+                <p class="location">LightInject.ServiceContainer.CreateDelegate(Type serviceType, string serviceName, bool throwError)</p>
         <ul id="header">
             <li id="stack" tabindex="1" class="selected">
                 Stack
@@ -225,94 +231,42 @@ a {
         <div id="stackpage" class="page">
             <ul>
                                     <li>
-                        <h2 class="stackerror">TypeLoadException: Could not load type &#x27;System.Data.OleDb.OleDbConnection&#x27; from assembly &#x27;System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&#x27;.</h2>
+                        <h2 class="stackerror">InvalidOperationException: Unresolved dependency [Target Type: PhoenixService.ScheduleApp.Services.AppointmentsService], [Parameter: appointmentsResolver(PhoenixService.Data.Interfaces.Resolvers.IAppointmentsResolver)], [Requested dependency: ServiceType:PhoenixService.Data.Interfaces.Resolvers.IAppointmentsResolver, ServiceName:]</h2>
                         <ul>
                             <li class="frame" id="frame1">
-                                    <h3>NCore.FoxDbInteractor..ctor()</h3>
+                                    <h3>LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)</h3>
 
                             </li>
                             <li class="frame" id="frame2">
-                                    <h3>lambda_method(Closure , object[] )</h3>
+                                    <h3>LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)</h3>
 
                             </li>
                             <li class="frame" id="frame3">
-                                    <h3>LightInject.ServiceContainer&#x2B;&lt;&gt;c__DisplayClass138_0.&lt;WrapAsFuncDelegate&gt;b__0()</h3>
+                                    <h3>LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action&lt;IEmitter&gt; decoratorTargetEmitter)</h3>
 
                             </li>
                             <li class="frame" id="frame4">
-                                    <h3>LightInject.PerRequestLifeTime.GetInstance(Func&lt;object&gt; createInstance, Scope scope)</h3>
+                                    <h3>LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action&lt;IEmitter&gt; decoratorTargetEmitMethod)</h3>
 
                             </li>
                             <li class="frame" id="frame5">
-                                    <h3>lambda_method(Closure , object[] )</h3>
+                                    <h3>LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)</h3>
 
                             </li>
                             <li class="frame" id="frame6">
-                                    <h3>LightInject.ServiceContainer.TryGetInstance(Type serviceType)</h3>
+                                    <h3>LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)</h3>
 
                             </li>
                             <li class="frame" id="frame7">
-                                    <h3>LightInject.Scope&#x2B;&lt;&gt;c__DisplayClass26_0.&lt;TryGetInstance&gt;b__0()</h3>
+                                    <h3>LightInject.ServiceContainer&#x2B;&lt;&gt;c__DisplayClass186_0.&lt;ResolveEmitMethod&gt;b__0(IEmitter methodSkeleton)</h3>
 
                             </li>
                             <li class="frame" id="frame8">
-                                    <h3>LightInject.Scope.WithThisScope&lt;T&gt;(Func&lt;T&gt; function)</h3>
+                                    <h3>LightInject.ServiceContainer&#x2B;&lt;&gt;c__DisplayClass141_0.&lt;CreateEmitMethodWrapper&gt;b__0(IEmitter ms)</h3>
 
                             </li>
                             <li class="frame" id="frame9">
-                                    <h3>LightInject.Scope.TryGetInstance(Type serviceType)</h3>
-
-                            </li>
-                            <li class="frame" id="frame10">
-                                    <h3>LightInject.Microsoft.DependencyInjection.LightInjectServiceProvider.GetService(Type serviceType)</h3>
-
-                            </li>
-                            <li class="frame" id="frame11">
-                                    <h3>Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)</h3>
-
-                            </li>
-                            <li class="frame" id="frame12">
-                                    <h3>Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)</h3>
-
-                            </li>
-                            <li class="frame" id="frame13">
-                                    <h3>Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider&#x2B;&lt;&gt;c__DisplayClass5_0.&lt;CreateControllerFactory&gt;g__CreateController|0(ControllerContext controllerContext)</h3>
-
-                            </li>
-                            <li class="frame" id="frame14">
-                                    <h3>Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(ref State next, ref Scope scope, ref object state, ref bool isCompleted)</h3>
-
-                            </li>
-                            <li class="frame" id="frame15">
-                                    <h3>Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()</h3>
-
-                            </li>
-                            <li class="frame" id="frame16">
-                                    <h3>Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()</h3>
-
-                            </li>
-                            <li class="frame" id="frame17">
-                                    <h3>Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)</h3>
-
-                            </li>
-                            <li class="frame" id="frame18">
-                                    <h3>Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(ref State next, ref Scope scope, ref object state, ref bool isCompleted)</h3>
-
-                            </li>
-                            <li class="frame" id="frame19">
-                                    <h3>Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()</h3>
-
-                            </li>
-                            <li class="frame" id="frame20">
-                                    <h3>Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()</h3>
-
-                            </li>
-                            <li class="frame" id="frame21">
-                                    <h3>Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)</h3>
-
-                            </li>
-                            <li class="frame" id="frame22">
-                                    <h3>Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)</h3>
+                                    <h3>LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)</h3>
 
                             </li>
                         </ul>
@@ -324,7 +278,215 @@ a {
                                 <button class="showRawException" data-exceptionDetailId="exceptionDetail1">Show raw exception details</button>
                             </div>
                             <div id="exceptionDetail1" class="rawExceptionDetails">
-                                <pre class="rawExceptionStackTrace">System.TypeLoadException: Could not load type &#x27;System.Data.OleDb.OleDbConnection&#x27; from assembly &#x27;System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&#x27;.&#xD;&#xA;   at NCore.FoxDbInteractor..ctor()&#xD;&#xA;   at lambda_method(Closure , Object[] )&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass138_0.&lt;WrapAsFuncDelegate&gt;b__0()&#xD;&#xA;   at LightInject.PerRequestLifeTime.GetInstance(Func`1 createInstance, Scope scope)&#xD;&#xA;   at lambda_method(Closure , Object[] )&#xD;&#xA;   at LightInject.ServiceContainer.TryGetInstance(Type serviceType)&#xD;&#xA;   at LightInject.Scope.&lt;&gt;c__DisplayClass26_0.&lt;TryGetInstance&gt;b__0()&#xD;&#xA;   at LightInject.Scope.WithThisScope[T](Func`1 function)&#xD;&#xA;   at LightInject.Scope.TryGetInstance(Type serviceType)&#xD;&#xA;   at LightInject.Microsoft.DependencyInjection.LightInjectServiceProvider.GetService(Type serviceType)&#xD;&#xA;   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.&lt;&gt;c__DisplayClass5_0.&lt;CreateControllerFactory&gt;g__CreateController|0(ControllerContext controllerContext)&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State&amp; next, Scope&amp; scope, Object&amp; state, Boolean&amp; isCompleted)&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State&amp; next, Scope&amp; scope, Object&amp; state, Boolean&amp; isCompleted)&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()&#xD;&#xA;   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)&#xD;&#xA;   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)</pre>
+                                <pre class="rawExceptionStackTrace">System.InvalidOperationException: Unresolved dependency [Target Type: PhoenixService.ScheduleApp.Services.AppointmentsService], [Parameter: appointmentsResolver(PhoenixService.Data.Interfaces.Resolvers.IAppointmentsResolver)], [Requested dependency: ServiceType:PhoenixService.Data.Interfaces.Resolvers.IAppointmentsResolver, ServiceName:]&#xD;&#xA;   at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass186_0.&lt;ResolveEmitMethod&gt;b__0(IEmitter methodSkeleton)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass141_0.&lt;CreateEmitMethodWrapper&gt;b__0(IEmitter ms)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)</pre>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h2 class="stackerror">InvalidOperationException: Unresolved dependency [Target Type: PhoenixService.ScheduleApp.Actions.ScheduleAction], [Parameter: appointmentsService(PhoenixService.ScheduleApp.Specifications.Services.IAppointmentsService)], [Requested dependency: ServiceType:PhoenixService.ScheduleApp.Specifications.Services.IAppointmentsService, ServiceName:]</h2>
+                        <ul>
+                            <li class="frame" id="frame10">
+                                    <h3>LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)</h3>
+
+                            </li>
+                            <li class="frame" id="frame11">
+                                    <h3>LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action&lt;IEmitter&gt; decoratorTargetEmitter)</h3>
+
+                            </li>
+                            <li class="frame" id="frame12">
+                                    <h3>LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action&lt;IEmitter&gt; decoratorTargetEmitMethod)</h3>
+
+                            </li>
+                            <li class="frame" id="frame13">
+                                    <h3>LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)</h3>
+
+                            </li>
+                            <li class="frame" id="frame14">
+                                    <h3>LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)</h3>
+
+                            </li>
+                            <li class="frame" id="frame15">
+                                    <h3>LightInject.ServiceContainer&#x2B;&lt;&gt;c__DisplayClass186_0.&lt;ResolveEmitMethod&gt;b__0(IEmitter methodSkeleton)</h3>
+
+                            </li>
+                            <li class="frame" id="frame16">
+                                    <h3>LightInject.ServiceContainer&#x2B;&lt;&gt;c__DisplayClass141_0.&lt;CreateEmitMethodWrapper&gt;b__0(IEmitter ms)</h3>
+
+                            </li>
+                            <li class="frame" id="frame17">
+                                    <h3>LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)</h3>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <br/>
+                        <div class="rawExceptionBlock">
+                            <div class="showRawExceptionContainer">
+                                <button class="showRawException" data-exceptionDetailId="exceptionDetail2">Show raw exception details</button>
+                            </div>
+                            <div id="exceptionDetail2" class="rawExceptionDetails">
+                                <pre class="rawExceptionStackTrace">System.InvalidOperationException: Unresolved dependency [Target Type: PhoenixService.ScheduleApp.Actions.ScheduleAction], [Parameter: appointmentsService(PhoenixService.ScheduleApp.Specifications.Services.IAppointmentsService)], [Requested dependency: ServiceType:PhoenixService.ScheduleApp.Specifications.Services.IAppointmentsService, ServiceName:] ---&gt; System.InvalidOperationException: Unresolved dependency [Target Type: PhoenixService.ScheduleApp.Services.AppointmentsService], [Parameter: appointmentsResolver(PhoenixService.Data.Interfaces.Resolvers.IAppointmentsResolver)], [Requested dependency: ServiceType:PhoenixService.Data.Interfaces.Resolvers.IAppointmentsResolver, ServiceName:]&#xD;&#xA;   at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass186_0.&lt;ResolveEmitMethod&gt;b__0(IEmitter methodSkeleton)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass141_0.&lt;CreateEmitMethodWrapper&gt;b__0(IEmitter ms)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)&#xD;&#xA;   --- End of inner exception stack trace ---&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass186_0.&lt;ResolveEmitMethod&gt;b__0(IEmitter methodSkeleton)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass141_0.&lt;CreateEmitMethodWrapper&gt;b__0(IEmitter ms)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)</pre>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h2 class="stackerror">InvalidOperationException: Unresolved dependency [Target Type: PhoenixService.ScheduleApi.Controllers.ScheduleController], [Parameter: scheduleAction(PhoenixService.ScheduleApp.Specifications.Actions.IScheduleAction)], [Requested dependency: ServiceType:PhoenixService.ScheduleApp.Specifications.Actions.IScheduleAction, ServiceName:]</h2>
+                        <ul>
+                            <li class="frame" id="frame18">
+                                    <h3>LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)</h3>
+
+                            </li>
+                            <li class="frame" id="frame19">
+                                    <h3>LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action&lt;IEmitter&gt; decoratorTargetEmitter)</h3>
+
+                            </li>
+                            <li class="frame" id="frame20">
+                                    <h3>LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action&lt;IEmitter&gt; decoratorTargetEmitMethod)</h3>
+
+                            </li>
+                            <li class="frame" id="frame21">
+                                    <h3>LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)</h3>
+
+                            </li>
+                            <li class="frame" id="frame22">
+                                    <h3>LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)</h3>
+
+                            </li>
+                            <li class="frame" id="frame23">
+                                    <h3>LightInject.ServiceContainer&#x2B;&lt;&gt;c__DisplayClass186_0.&lt;ResolveEmitMethod&gt;b__2(IEmitter ms)</h3>
+
+                            </li>
+                            <li class="frame" id="frame24">
+                                    <h3>LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action&lt;IEmitter&gt; serviceEmitter)</h3>
+
+                            </li>
+                            <li class="frame" id="frame25">
+                                    <h3>LightInject.ServiceContainer.CreateInstanceDelegateIndex(Action&lt;IEmitter&gt; emitMethod)</h3>
+
+                            </li>
+                            <li class="frame" id="frame26">
+                                    <h3>LightInject.ServiceContainer.EmitLifetime(ServiceRegistration serviceRegistration, Action&lt;IEmitter&gt; emitMethod, IEmitter emitter)</h3>
+
+                            </li>
+                            <li class="frame" id="frame27">
+                                    <h3>LightInject.ServiceContainer&#x2B;&lt;&gt;c__DisplayClass186_0.&lt;ResolveEmitMethod&gt;b__1(IEmitter methodSkeleton)</h3>
+
+                            </li>
+                            <li class="frame" id="frame28">
+                                    <h3>LightInject.ServiceContainer&#x2B;&lt;&gt;c__DisplayClass141_0.&lt;CreateEmitMethodWrapper&gt;b__0(IEmitter ms)</h3>
+
+                            </li>
+                            <li class="frame" id="frame29">
+                                    <h3>LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action&lt;IEmitter&gt; serviceEmitter)</h3>
+
+                            </li>
+                            <li class="frame" id="frame30">
+                                    <h3>LightInject.ServiceContainer.CreateDelegate(Type serviceType, string serviceName, bool throwError)</h3>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <br/>
+                        <div class="rawExceptionBlock">
+                            <div class="showRawExceptionContainer">
+                                <button class="showRawException" data-exceptionDetailId="exceptionDetail3">Show raw exception details</button>
+                            </div>
+                            <div id="exceptionDetail3" class="rawExceptionDetails">
+                                <pre class="rawExceptionStackTrace">System.InvalidOperationException: Unresolved dependency [Target Type: PhoenixService.ScheduleApi.Controllers.ScheduleController], [Parameter: scheduleAction(PhoenixService.ScheduleApp.Specifications.Actions.IScheduleAction)], [Requested dependency: ServiceType:PhoenixService.ScheduleApp.Specifications.Actions.IScheduleAction, ServiceName:] ---&gt; System.InvalidOperationException: Unresolved dependency [Target Type: PhoenixService.ScheduleApp.Actions.ScheduleAction], [Parameter: appointmentsService(PhoenixService.ScheduleApp.Specifications.Services.IAppointmentsService)], [Requested dependency: ServiceType:PhoenixService.ScheduleApp.Specifications.Services.IAppointmentsService, ServiceName:] ---&gt; System.InvalidOperationException: Unresolved dependency [Target Type: PhoenixService.ScheduleApp.Services.AppointmentsService], [Parameter: appointmentsResolver(PhoenixService.Data.Interfaces.Resolvers.IAppointmentsResolver)], [Requested dependency: ServiceType:PhoenixService.Data.Interfaces.Resolvers.IAppointmentsResolver, ServiceName:]&#xD;&#xA;   at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass186_0.&lt;ResolveEmitMethod&gt;b__0(IEmitter methodSkeleton)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass141_0.&lt;CreateEmitMethodWrapper&gt;b__0(IEmitter ms)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)&#xD;&#xA;   --- End of inner exception stack trace ---&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass186_0.&lt;ResolveEmitMethod&gt;b__0(IEmitter methodSkeleton)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass141_0.&lt;CreateEmitMethodWrapper&gt;b__0(IEmitter ms)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)&#xD;&#xA;   --- End of inner exception stack trace ---&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass186_0.&lt;ResolveEmitMethod&gt;b__2(IEmitter ms)&#xD;&#xA;   at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)&#xD;&#xA;   at LightInject.ServiceContainer.CreateInstanceDelegateIndex(Action`1 emitMethod)&#xD;&#xA;   at LightInject.ServiceContainer.EmitLifetime(ServiceRegistration serviceRegistration, Action`1 emitMethod, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass186_0.&lt;ResolveEmitMethod&gt;b__1(IEmitter methodSkeleton)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass141_0.&lt;CreateEmitMethodWrapper&gt;b__0(IEmitter ms)&#xD;&#xA;   at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)&#xD;&#xA;   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)</pre>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h2 class="stackerror">InvalidOperationException: Unable to resolve type: PhoenixService.ScheduleApi.Controllers.ScheduleController, service name: </h2>
+                        <ul>
+                            <li class="frame" id="frame31">
+                                    <h3>LightInject.ServiceContainer.CreateDelegate(Type serviceType, string serviceName, bool throwError)</h3>
+
+                            </li>
+                            <li class="frame" id="frame32">
+                                    <h3>LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, bool throwError)</h3>
+
+                            </li>
+                            <li class="frame" id="frame33">
+                                    <h3>LightInject.ServiceContainer.TryGetInstance(Type serviceType)</h3>
+
+                            </li>
+                            <li class="frame" id="frame34">
+                                    <h3>LightInject.Scope&#x2B;&lt;&gt;c__DisplayClass26_0.&lt;TryGetInstance&gt;b__0()</h3>
+
+                            </li>
+                            <li class="frame" id="frame35">
+                                    <h3>LightInject.Scope.WithThisScope&lt;T&gt;(Func&lt;T&gt; function)</h3>
+
+                            </li>
+                            <li class="frame" id="frame36">
+                                    <h3>LightInject.Scope.TryGetInstance(Type serviceType)</h3>
+
+                            </li>
+                            <li class="frame" id="frame37">
+                                    <h3>LightInject.Microsoft.DependencyInjection.LightInjectServiceProvider.GetService(Type serviceType)</h3>
+
+                            </li>
+                            <li class="frame" id="frame38">
+                                    <h3>Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)</h3>
+
+                            </li>
+                            <li class="frame" id="frame39">
+                                    <h3>Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)</h3>
+
+                            </li>
+                            <li class="frame" id="frame40">
+                                    <h3>Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider&#x2B;&lt;&gt;c__DisplayClass5_0.&lt;CreateControllerFactory&gt;g__CreateController|0(ControllerContext controllerContext)</h3>
+
+                            </li>
+                            <li class="frame" id="frame41">
+                                    <h3>Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(ref State next, ref Scope scope, ref object state, ref bool isCompleted)</h3>
+
+                            </li>
+                            <li class="frame" id="frame42">
+                                    <h3>Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()</h3>
+
+                            </li>
+                            <li class="frame" id="frame43">
+                                    <h3>Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()</h3>
+
+                            </li>
+                            <li class="frame" id="frame44">
+                                    <h3>Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)</h3>
+
+                            </li>
+                            <li class="frame" id="frame45">
+                                    <h3>Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(ref State next, ref Scope scope, ref object state, ref bool isCompleted)</h3>
+
+                            </li>
+                            <li class="frame" id="frame46">
+                                    <h3>Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()</h3>
+
+                            </li>
+                            <li class="frame" id="frame47">
+                                    <h3>Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()</h3>
+
+                            </li>
+                            <li class="frame" id="frame48">
+                                    <h3>Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)</h3>
+
+                            </li>
+                            <li class="frame" id="frame49">
+                                    <h3>Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)</h3>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <br/>
+                        <div class="rawExceptionBlock">
+                            <div class="showRawExceptionContainer">
+                                <button class="showRawException" data-exceptionDetailId="exceptionDetail4">Show raw exception details</button>
+                            </div>
+                            <div id="exceptionDetail4" class="rawExceptionDetails">
+                                <pre class="rawExceptionStackTrace">System.InvalidOperationException: Unable to resolve type: PhoenixService.ScheduleApi.Controllers.ScheduleController, service name:  ---&gt; System.InvalidOperationException: Unresolved dependency [Target Type: PhoenixService.ScheduleApi.Controllers.ScheduleController], [Parameter: scheduleAction(PhoenixService.ScheduleApp.Specifications.Actions.IScheduleAction)], [Requested dependency: ServiceType:PhoenixService.ScheduleApp.Specifications.Actions.IScheduleAction, ServiceName:] ---&gt; System.InvalidOperationException: Unresolved dependency [Target Type: PhoenixService.ScheduleApp.Actions.ScheduleAction], [Parameter: appointmentsService(PhoenixService.ScheduleApp.Specifications.Services.IAppointmentsService)], [Requested dependency: ServiceType:PhoenixService.ScheduleApp.Specifications.Services.IAppointmentsService, ServiceName:] ---&gt; System.InvalidOperationException: Unresolved dependency [Target Type: PhoenixService.ScheduleApp.Services.AppointmentsService], [Parameter: appointmentsResolver(PhoenixService.Data.Interfaces.Resolvers.IAppointmentsResolver)], [Requested dependency: ServiceType:PhoenixService.Data.Interfaces.Resolvers.IAppointmentsResolver, ServiceName:]&#xD;&#xA;   at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass186_0.&lt;ResolveEmitMethod&gt;b__0(IEmitter methodSkeleton)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass141_0.&lt;CreateEmitMethodWrapper&gt;b__0(IEmitter ms)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)&#xD;&#xA;   --- End of inner exception stack trace ---&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass186_0.&lt;ResolveEmitMethod&gt;b__0(IEmitter methodSkeleton)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass141_0.&lt;CreateEmitMethodWrapper&gt;b__0(IEmitter ms)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)&#xD;&#xA;   --- End of inner exception stack trace ---&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)&#xD;&#xA;   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass186_0.&lt;ResolveEmitMethod&gt;b__2(IEmitter ms)&#xD;&#xA;   at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)&#xD;&#xA;   at LightInject.ServiceContainer.CreateInstanceDelegateIndex(Action`1 emitMethod)&#xD;&#xA;   at LightInject.ServiceContainer.EmitLifetime(ServiceRegistration serviceRegistration, Action`1 emitMethod, IEmitter emitter)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass186_0.&lt;ResolveEmitMethod&gt;b__1(IEmitter methodSkeleton)&#xD;&#xA;   at LightInject.ServiceContainer.&lt;&gt;c__DisplayClass141_0.&lt;CreateEmitMethodWrapper&gt;b__0(IEmitter ms)&#xD;&#xA;   at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)&#xD;&#xA;   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)&#xD;&#xA;   --- End of inner exception stack trace ---&#xD;&#xA;   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)&#xD;&#xA;   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)&#xD;&#xA;   at LightInject.ServiceContainer.TryGetInstance(Type serviceType)&#xD;&#xA;   at LightInject.Scope.&lt;&gt;c__DisplayClass26_0.&lt;TryGetInstance&gt;b__0()&#xD;&#xA;   at LightInject.Scope.WithThisScope[T](Func`1 function)&#xD;&#xA;   at LightInject.Scope.TryGetInstance(Type serviceType)&#xD;&#xA;   at LightInject.Microsoft.DependencyInjection.LightInjectServiceProvider.GetService(Type serviceType)&#xD;&#xA;   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.&lt;&gt;c__DisplayClass5_0.&lt;CreateControllerFactory&gt;g__CreateController|0(ControllerContext controllerContext)&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State&amp; next, Scope&amp; scope, Object&amp; state, Boolean&amp; isCompleted)&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State&amp; next, Scope&amp; scope, Object&amp; state, Boolean&amp; isCompleted)&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()&#xD;&#xA;   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()&#xD;&#xA;   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)&#xD;&#xA;   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)</pre>
                             </div>
                         </div>
                     </li>
@@ -403,7 +565,7 @@ a {
                                 </tr>
                                 <tr>
                                     <td>MS-ASPNETCORE-TOKEN</td>
-                                    <td>90f543e2-bc6c-49e7-80b9-218d58a7f1f9</td>
+                                    <td>8de21f56-86cf-43bc-bb04-1e3a97e86857</td>
                                 </tr>
                                 <tr>
                                     <td>Referer</td>
@@ -419,7 +581,7 @@ a {
                                 </tr>
                                 <tr>
                                     <td>X-Original-For</td>
-                                    <td>127.0.0.1:50911</td>
+                                    <td>127.0.0.1:50253</td>
                                 </tr>
                                 <tr>
                                     <td>X-Original-Proto</td>
