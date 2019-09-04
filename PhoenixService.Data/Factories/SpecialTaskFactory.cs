@@ -16,7 +16,6 @@ namespace PhoenixService.Data.Factories
             DateTime? startTime = null,
             string phoenixId = null)
         {
-            var startTimeValue = startTime ?? DateTime.Now;
             return new SpecialTask
             {
                 DateIn = dateIn,
@@ -26,8 +25,8 @@ namespace PhoenixService.Data.Factories
                 InitializeType = initializeType,
                 OperatorPhoenixId = operatorPhoenixId,
                 PatientName = patientName,
-                PhoenixId = phoenixId,
-                StartTime = startTimeValue
+                PhoenixId = phoenixId ?? NCore.Common.Sys2015(),
+                StartTime = startTime ?? DateTime.Now
             };
         }
     }

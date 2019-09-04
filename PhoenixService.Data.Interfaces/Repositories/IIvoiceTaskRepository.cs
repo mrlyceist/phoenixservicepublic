@@ -8,7 +8,7 @@ namespace PhoenixService.Data.Interfaces.Repositories
     public interface IIvoiceTaskRepository
     {
         IQueryable<VoiceServiceTask> Query();
-        Task Save(VoiceServiceTask task);
+        Task SaveAsync(VoiceServiceTask task);
         Task Delete(Guid taskId);
     }
 }

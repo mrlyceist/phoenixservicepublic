@@ -15,5 +15,6 @@ namespace PhoenixService.Domain
         public int PhoenixType { get; set; }
         public VoiceServiceTaskStage Stage { get; set; }
         public string SmsText { get; set; }
+        public Guid? Id { get; set; }
     }
 }
