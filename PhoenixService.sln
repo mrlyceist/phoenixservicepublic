@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoenixService.Application.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoenixService.Data.Interfaces", "PhoenixService.Data.Interfaces\PhoenixService.Data.Interfaces.csproj", "{B7D13226-FCB9-492E-B008-8DCABDC05CF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoenixService.Web.ScheduleApi", "PhoenixService.Web.ScheduleApi\PhoenixService.Web.ScheduleApi.csproj", "{E53FF15E-9E4C-490C-BD03-9A561B0D8708}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoenixService.Web.ScheduleApiOld", "PhoenixService.Web.ScheduleApiOld\PhoenixService.Web.ScheduleApiOld.csproj", "{E53FF15E-9E4C-490C-BD03-9A561B0D8708}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
