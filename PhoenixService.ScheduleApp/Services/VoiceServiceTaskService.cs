@@ -50,7 +50,7 @@ namespace PhoenixService.ScheduleApp.Services
             var phone = phoneNumber.NumberDelPlus();
 
             var scenarioId = config.ScenarioId;
-            var campaignId = config.CompaignId;
+            var campaignId = config.CampaignId;
             var patientFullName = config.PatientFullName;
             var tag = config.Tag;
 

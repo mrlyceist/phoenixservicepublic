@@ -3,5 +3,6 @@
     public interface IDataConfiguration
     {
         string PhoenixExecutablePath { get; }
+        string DefaultDutyComment { get; }
     }
 }

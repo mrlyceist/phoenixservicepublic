@@ -13,11 +13,11 @@ namespace PhoenixService.Data
         private readonly StoreContext storeContext;
         private readonly IEntityFactory<Duty> dutyFactory;
         private readonly IEntityFactory<EspecialTask> especialTaskFactory;
-        private readonly IDataConfig config;
+        private readonly IDataConfiguration config;
 
         public Store(IEntityFactory<Duty> dutyFactory,
             IEntityFactory<EspecialTask> especialTaskFactory,
-            IDataConfig config)
+            IDataConfiguration config)
         {
             this.dutyFactory = dutyFactory;
             this.especialTaskFactory = especialTaskFactory;

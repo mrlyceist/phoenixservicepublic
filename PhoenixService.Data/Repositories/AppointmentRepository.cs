@@ -12,9 +12,9 @@ namespace PhoenixService.Data.Repositories
     public class AppointmentRepository : IAppointmentRepository
     {
         private readonly IEntityFactory<Duty> dutyFactory;
-        private readonly IDataConfig config;
+        private readonly IDataConfiguration config;
 
-        public AppointmentRepository(IEntityFactory<Duty> dutyFactory, IDataConfig config)
+        public AppointmentRepository(IEntityFactory<Duty> dutyFactory, IDataConfiguration config)
         {
             this.dutyFactory = dutyFactory;
             this.config = config;

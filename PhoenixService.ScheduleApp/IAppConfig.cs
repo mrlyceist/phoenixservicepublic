@@ -4,15 +4,15 @@ namespace PhoenixService.ScheduleApp
 {
     public interface IAppConfig
     {
-        string PatientName { get; set; }
-        string DepartmentIndex { get; set; }
-        string DoctorIndex { get; set; }
-        string EspecialListIndex { get; set; }
-        int TaskInitializeType { get; set; }
-        string OperatorIndex { get; set; }
-        Guid ScenarioId { get; set; }
-        string CompaignId { get; set; }
-        string PatientFullName { get; set; }
-        string Tag { get; set; }
+        string PatientName { get; }
+        string DepartmentIndex { get; }
+        string DoctorIndex { get; }
+        string EspecialListIndex { get; }
+        int TaskInitializeType { get; }
+        string OperatorIndex { get; }
+        Guid ScenarioId { get; }
+        string CampaignId { get; }
+        string PatientFullName { get; }
+        string Tag { get; }
     }
 }
