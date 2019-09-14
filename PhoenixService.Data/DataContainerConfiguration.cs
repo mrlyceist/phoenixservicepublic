@@ -1,5 +1,4 @@
-﻿using System.Data.OleDb;
-using LightInject;
+﻿using LightInject;
 using NCore;
 using NCore.Factories;
 using NCore.Models;
@@ -8,8 +7,11 @@ using NCore.Specifications;
 using NCore.Specifications.Factories;
 using NCore.Specifications.Services;
 using PhoenixService.Data.Factories;
+using PhoenixService.Data.Interfaces;
 using PhoenixService.Data.Interfaces.Factories;
+using PhoenixService.Data.Interfaces.Repositories;
 using PhoenixService.Data.Interfaces.Resolvers;
+using PhoenixService.Data.Repositories;
 using PhoenixService.Data.Resolvers;
 
 namespace PhoenixService.Data
@@ -18,24 +20,38 @@ namespace PhoenixService.Data
     {
         public static void RegisterDataDependencies(this ServiceContainer container)
         {
-            var oledb = new OleDbConnection();
-            oledb.Dispose();
-
+            // Factories
             container.Register<IAppointmentFactory, AppointmentFactory>();
             container.Register<ISpecialistFactory, SpecialistFactory>();
+            container.Register<ISpecialTaskFactory, SpecialTaskFactory>();
+            container.Register<IVoiceServiceTaskFactory, VoiceServiceTaskFactory>();
+            // Repositories
+            container.Register<IAppointmentRepository, AppointmentRepository>();
+            container.Register<IIvoiceTaskRepository, IVoiceTaskRepository>();
+            container.Register<ISpecialTaskRepository, SpecialTaskRepository>();
+            // Resolvers
             container.Register<IAppointmentsResolver, AppointmentsResolver>();
             container.Register<ISpecialistResolver, SpecialistResolver>();
+            // Miscellaneous
+            container.Register<IStore, Store>();
+            // NCore: Miscellaneous
             container.Register<IFoxDbInteractor, FoxDbInteractor>(new PerContainerLifetime());
-            container.Register<IEntityFactory<Employee>, EmployeeFactory>();
             container.Register<ICategoryTransform, CategoryTransform>();
+            container.Register<IPhoenixSetupService, PhoenixSetupService>();
+            container.Register<IIVoiceDuty, IVoiceDuty>();
+            container.Register<IScheduleService, ScheduleService>();
+            // NCore: EntityFactories
+            container.Register<IEntityFactory<Employee>, EmployeeFactory>();
             container.Register<IEntityFactory<Kdg>, KdgFactory>();
             container.Register<IEntityFactory<Duty>, DutyFactory>();
             container.Register<IEntityFactory<Patient>, PatientFactory>();
             container.Register<IEntityFactory<Department>, DepartmentFactory>();
-            container.Register<IPhoenixSetupService, PhoenixSetupService>();
             container.Register<IEntityFactory<Specialty>, SpecialtyFactory>();
-            container.Register<IIVoiceDuty, IVoiceDuty>();
-            container.Register<IScheduleService, ScheduleService>();
+            container.Register<IEntityFactory<EspecialTask>, EspecialTaskFactory>();
+
+            var dbInteractor = container.GetInstance<IFoxDbInteractor>();
+            var config = container.GetInstance<IDataConfiguration>();
+            dbInteractor.InitializeConnection(config.PhoenixDbPath);
         }
     }
 }

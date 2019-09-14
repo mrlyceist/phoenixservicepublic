@@ -3,7 +3,7 @@ using PhoenixService.ScheduleApp.Specifications.Actions;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace PhoenixService.Web.ScheduleApiOld.Controllers
+namespace PhoenixService.Web.ScheduleApi.Controllers
 {
     public class ScheduleController : ApiController
     {

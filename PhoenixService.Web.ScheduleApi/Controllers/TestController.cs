@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace PhoenixService.Web.ScheduleApiOld.Controllers
+namespace PhoenixService.Web.ScheduleApi.Controllers
 {
     public class TestController : ApiController
     {

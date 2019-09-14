@@ -1,6 +1,4 @@
 ﻿using LightInject;
-using PhoenixService.ApiInfrastructure;
-using PhoenixService.Data;
 using PhoenixService.Data.Interfaces;
 using PhoenixService.ScheduleApp.Actions;
 using PhoenixService.ScheduleApp.Builders;
@@ -9,23 +7,22 @@ using PhoenixService.ScheduleApp.Specifications.Actions;
 using PhoenixService.ScheduleApp.Specifications.Builders;
 using PhoenixService.ScheduleApp.Specifications.Services;
 
-namespace PhoenixService.Web.ScheduleApiOld
+namespace PhoenixService.ScheduleApp
 {
-    internal static class ServiceContainerExtension
+    public static class ServiceContainerExtension
     {
-        internal static void RegisterTypes(this ServiceContainer container)
+        public static void RegisterAppDependencies(this ServiceContainer container)
         {
-            //var ole = new OleDbConnection();
-
+            // Actions
             container.Register<IScheduleAction, ScheduleAction>();
             container.Register<IAppointmentsAction, AppointmentsAction>();
+            container.Register<ITestAction, TestAction>();
+            // Builders
             container.Register<IAvailableAppointmentsMBuilder, AvailableAppointmentsMBuilder>();
             container.Register<ISpecialistWithScheduleMBuilder, SpecialistWithScheduleMBuilder>();
+            // Services
             container.Register<IAppointmentsService, AppointmentsService>();
-            container.Register<IDataConfiguration, Configuration>();
-            container.RegisterDataDependencies();
-            container.EnableAutoFactories();
-            container.RegisterAutoFactory<IActionFactory>();
+            container.Register<IVoiceServiceTaskService, VoiceServiceTaskService>();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using LightInject;
 using System.Web.Http;
 
-namespace PhoenixService.Web.ScheduleApiOld
+namespace PhoenixService.Web.ScheduleApi
 {
     public class WebLightinjectConfig
     {
@@ -9,12 +9,12 @@ namespace PhoenixService.Web.ScheduleApiOld
         {
             var containerOptions = new ContainerOptions { EnablePropertyInjection = false };
             var serviceContainer = new ServiceContainer(containerOptions);
+            serviceContainer.RegisterApiControllers();
             serviceContainer.RegisterTypes();
 
-            var lightInjectDependencyResolver = new LightinjectDependencyResolver(serviceContainer);
-
-            config.DependencyResolver = lightInjectDependencyResolver;
-            GlobalConfiguration.Configuration.DependencyResolver = lightInjectDependencyResolver;
+            serviceContainer.EnablePerWebRequestScope();
+            serviceContainer.EnableWebApi(config);
+            //serviceContainer.EnableMvc();
         }
     }
 }

@@ -11,7 +11,7 @@ namespace PhoenixService.Web.ScheduleApiOld
         {
             var config = new HttpConfiguration();
             WebApiConfig.Register(config);
-            WebLightinjectConfig.Register(config);
+            //WebLightinjectConfig.Register(config);
 
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);

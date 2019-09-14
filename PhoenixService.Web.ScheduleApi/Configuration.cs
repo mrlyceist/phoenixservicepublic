@@ -3,7 +3,7 @@ using PhoenixService.ScheduleApp;
 using System;
 using System.Configuration;
 
-namespace PhoenixService.Web.ScheduleApiOld
+namespace PhoenixService.Web.ScheduleApi
 {
     public class Configuration : IAppConfig, IDataConfiguration
     {
@@ -20,7 +20,7 @@ namespace PhoenixService.Web.ScheduleApiOld
             PatientFullName = ConfigurationManager.AppSettings["PatientFullName"];
             Tag = ConfigurationManager.AppSettings["Tag"];
             DefaultDutyComment = ConfigurationManager.AppSettings["DefaultDutyComment"];
-            PhoenixExecutablePath = ConfigurationManager.AppSettings["PhoenixExecutablePath"];
+            PhoenixDbPath = ConfigurationManager.AppSettings["PhoenixDbPath"];
         }
 
         public string PatientName { get; }
@@ -33,7 +33,7 @@ namespace PhoenixService.Web.ScheduleApiOld
         public string CampaignId { get; }
         public string PatientFullName { get; }
         public string Tag { get; }
-        public string PhoenixExecutablePath { get; }
+        public string PhoenixDbPath { get; }
         public string DefaultDutyComment { get; }
     }
 }

@@ -11,17 +11,11 @@ namespace PhoenixService.Data
     public class Store : IStore
     {
         private readonly StoreContext storeContext;
-        private readonly IEntityFactory<Duty> dutyFactory;
-        private readonly IEntityFactory<EspecialTask> especialTaskFactory;
-        private readonly IDataConfiguration config;
 
         public Store(IEntityFactory<Duty> dutyFactory,
             IEntityFactory<EspecialTask> especialTaskFactory,
             IDataConfiguration config)
         {
-            this.dutyFactory = dutyFactory;
-            this.especialTaskFactory = especialTaskFactory;
-            this.config = config;
             storeContext = new StoreContext();
 
             AppointmentRepository = new AppointmentRepository(dutyFactory, config);

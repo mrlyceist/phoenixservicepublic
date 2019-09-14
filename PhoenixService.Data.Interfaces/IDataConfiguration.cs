@@ -2,7 +2,7 @@
 {
     public interface IDataConfiguration
     {
-        string PhoenixExecutablePath { get; }
+        string PhoenixDbPath { get; }
         string DefaultDutyComment { get; }
     }
 }

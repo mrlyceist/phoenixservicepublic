@@ -1,6 +1,5 @@
 ﻿using NCore.Specifications;
 using NCore.Specifications.Services;
-using PhoenixService.Data.Interfaces;
 using PhoenixService.Data.Interfaces.Factories;
 using PhoenixService.Data.Interfaces.Resolvers;
 using PhoenixService.Domain;
@@ -17,9 +16,7 @@ namespace PhoenixService.Data.Resolvers
         private readonly ISpecialistResolver specialistResolver;
         private readonly IScheduleService scheduleService;
 
-        public AppointmentsResolver(IFoxDbInteractor dbInteractor,
-            IDataConfiguration configuration,
-            IIVoiceDuty iVoiceDuty,
+        public AppointmentsResolver(IIVoiceDuty iVoiceDuty,
             IAppointmentFactory appointmentFactory,
             ISpecialistResolver specialistResolver,
             IScheduleService scheduleService)
@@ -28,8 +25,6 @@ namespace PhoenixService.Data.Resolvers
             this.appointmentFactory = appointmentFactory;
             this.specialistResolver = specialistResolver;
             this.scheduleService = scheduleService;
-
-            dbInteractor.InitializeConnection(configuration.PhoenixExecutablePath);
         }
 
         public Task<Appointment[]> GetNearestByRequestId(string requestId)
