@@ -1,9 +1,9 @@
-﻿using System;
-using PhoenixService.Data.Interfaces.Repositories;
+﻿using PhoenixService.Data.Interfaces.Repositories;
 using PhoenixService.Data.Interfaces.Resolvers;
 using PhoenixService.Domain;
 using PhoenixService.ScheduleApp.Dto;
 using PhoenixService.ScheduleApp.Specifications.Services;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,12 +13,15 @@ namespace PhoenixService.ScheduleApp.Services
     {
         private readonly IAppointmentsResolver appointmentsResolver;
         private readonly IAppointmentRepository appointmentRepository;
+        private readonly IPatientResolver patientResolver;
 
         public AppointmentsService(IAppointmentsResolver appointmentsResolver,
-            IAppointmentRepository appointmentRepository)
+            IAppointmentRepository appointmentRepository,
+            IPatientResolver patientResolver)
         {
             this.appointmentsResolver = appointmentsResolver;
             this.appointmentRepository = appointmentRepository;
+            this.patientResolver = patientResolver;
         }
 
         public async Task<Appointment> GetNearestByRequestIdAsync(string requestId)
@@ -48,8 +51,11 @@ namespace PhoenixService.ScheduleApp.Services
             var appointments = await appointmentsResolver.GetNearestByRequestId(takeAppointmentM.RequestId);
             var appointment = appointments.FirstOrDefault(a => a.PhoenixId == takeAppointmentM.AppointmentId);
 
+            var patient = await patientResolver.GetByRequestId(takeAppointmentM.RequestId);
+
             if (appointment == null)
                 return false;
+            appointment.Patient = patient;
 
             await appointmentRepository.Save(appointment);
 

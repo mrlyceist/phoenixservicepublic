@@ -22,15 +22,18 @@ namespace PhoenixService.Data
         {
             // Factories
             container.Register<IAppointmentFactory, AppointmentFactory>();
+            container.Register<IPatientFactory, Factories.PatientFactory>();
             container.Register<ISpecialistFactory, SpecialistFactory>();
             container.Register<ISpecialTaskFactory, SpecialTaskFactory>();
             container.Register<IVoiceServiceTaskFactory, VoiceServiceTaskFactory>();
             // Repositories
             container.Register<IAppointmentRepository, AppointmentRepository>();
+            container.Register<IPatientRepository, PatientRepository>();
             container.Register<IIvoiceTaskRepository, IVoiceTaskRepository>();
             container.Register<ISpecialTaskRepository, SpecialTaskRepository>();
             // Resolvers
             container.Register<IAppointmentsResolver, AppointmentsResolver>();
+            container.Register<IPatientResolver, PatientResolver>();
             container.Register<ISpecialistResolver, SpecialistResolver>();
             // Miscellaneous
             container.Register<IStore, Store>();
@@ -44,7 +47,7 @@ namespace PhoenixService.Data
             container.Register<IEntityFactory<Employee>, EmployeeFactory>();
             container.Register<IEntityFactory<Kdg>, KdgFactory>();
             container.Register<IEntityFactory<Duty>, DutyFactory>();
-            container.Register<IEntityFactory<Patient>, PatientFactory>();
+            container.Register<IEntityFactory<Patient>, NCore.Factories.PatientFactory>();
             container.Register<IEntityFactory<Department>, DepartmentFactory>();
             container.Register<IEntityFactory<Specialty>, SpecialtyFactory>();
             container.Register<IEntityFactory<EspecialTask>, EspecialTaskFactory>();
