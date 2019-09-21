@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoenixService.ScheduleApi", "PhoenixService.ScheduleApi\PhoenixService.ScheduleApi.csproj", "{3AB0D36C-3575-4EBE-99FA-57742760A53A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{E7DA8B89-1BC7-4A53-815D-8DD3F9A15FB4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{A3395139-BFE6-42C1-870E-BF4C3EB096F5}"
@@ -25,8 +23,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoenixService.Application.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoenixService.Data.Interfaces", "PhoenixService.Data.Interfaces\PhoenixService.Data.Interfaces.csproj", "{B7D13226-FCB9-492E-B008-8DCABDC05CF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoenixService.Web.ScheduleApiOld", "PhoenixService.Web.ScheduleApiOld\PhoenixService.Web.ScheduleApiOld.csproj", "{E53FF15E-9E4C-490C-BD03-9A561B0D8708}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoenixService.Web.ScheduleApi", "PhoenixService.Web.ScheduleApi\PhoenixService.Web.ScheduleApi.csproj", "{634A00C9-C1F3-4C58-836E-95586C0A9C85}"
 EndProject
 Global
@@ -37,12 +33,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3AB0D36C-3575-4EBE-99FA-57742760A53A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3AB0D36C-3575-4EBE-99FA-57742760A53A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3AB0D36C-3575-4EBE-99FA-57742760A53A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{3AB0D36C-3575-4EBE-99FA-57742760A53A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3AB0D36C-3575-4EBE-99FA-57742760A53A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3AB0D36C-3575-4EBE-99FA-57742760A53A}.Release|x86.ActiveCfg = Release|Any CPU
 		{CE883F68-22ED-4161-88B0-770DD154F49A}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{CE883F68-22ED-4161-88B0-770DD154F49A}.Debug|Any CPU.Build.0 = Debug|x86
 		{CE883F68-22ED-4161-88B0-770DD154F49A}.Debug|x86.ActiveCfg = Debug|x86
@@ -91,12 +81,6 @@ Global
 		{B7D13226-FCB9-492E-B008-8DCABDC05CF9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B7D13226-FCB9-492E-B008-8DCABDC05CF9}.Release|x86.ActiveCfg = Release|x86
 		{B7D13226-FCB9-492E-B008-8DCABDC05CF9}.Release|x86.Build.0 = Release|x86
-		{E53FF15E-9E4C-490C-BD03-9A561B0D8708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E53FF15E-9E4C-490C-BD03-9A561B0D8708}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E53FF15E-9E4C-490C-BD03-9A561B0D8708}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{E53FF15E-9E4C-490C-BD03-9A561B0D8708}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E53FF15E-9E4C-490C-BD03-9A561B0D8708}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E53FF15E-9E4C-490C-BD03-9A561B0D8708}.Release|x86.ActiveCfg = Release|Any CPU
 		{634A00C9-C1F3-4C58-836E-95586C0A9C85}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{634A00C9-C1F3-4C58-836E-95586C0A9C85}.Debug|Any CPU.Build.0 = Debug|x86
 		{634A00C9-C1F3-4C58-836E-95586C0A9C85}.Debug|x86.ActiveCfg = Debug|x86
@@ -110,14 +94,12 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{3AB0D36C-3575-4EBE-99FA-57742760A53A} = {56D9B3DE-4E8B-4299-BA6B-3CC8141EA5C7}
 		{CE883F68-22ED-4161-88B0-770DD154F49A} = {A3395139-BFE6-42C1-870E-BF4C3EB096F5}
 		{A0385C9D-843F-40AE-993E-A6ADE0772D4D} = {56D9B3DE-4E8B-4299-BA6B-3CC8141EA5C7}
 		{F8380201-9B1A-4EF2-8C6F-154FB0F7CD75} = {56D9B3DE-4E8B-4299-BA6B-3CC8141EA5C7}
 		{570172F5-1C60-4524-9B40-37045BB58C7F} = {E7DA8B89-1BC7-4A53-815D-8DD3F9A15FB4}
 		{78F5E866-A1BB-4CCB-BA5D-F3825A5D9132} = {179360F9-4B58-404C-9622-B4297F55D0A7}
 		{B7D13226-FCB9-492E-B008-8DCABDC05CF9} = {179360F9-4B58-404C-9622-B4297F55D0A7}
-		{E53FF15E-9E4C-490C-BD03-9A561B0D8708} = {56D9B3DE-4E8B-4299-BA6B-3CC8141EA5C7}
 		{634A00C9-C1F3-4C58-836E-95586C0A9C85} = {56D9B3DE-4E8B-4299-BA6B-3CC8141EA5C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
