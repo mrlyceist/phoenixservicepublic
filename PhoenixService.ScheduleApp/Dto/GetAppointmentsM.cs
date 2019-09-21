@@ -11,6 +11,6 @@ namespace PhoenixService.ScheduleApp.Dto
         /// <summary>
         /// Желаемая дата записи
         /// </summary>
-        public DateTime DateWanted { get; set; }
+        public string DateWanted { get; set; }
     }
 }

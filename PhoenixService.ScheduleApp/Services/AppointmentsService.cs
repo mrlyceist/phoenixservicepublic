@@ -1,4 +1,5 @@
-﻿using PhoenixService.Data.Interfaces.Repositories;
+﻿using System;
+using PhoenixService.Data.Interfaces.Repositories;
 using PhoenixService.Data.Interfaces.Resolvers;
 using PhoenixService.Domain;
 using PhoenixService.ScheduleApp.Dto;
@@ -33,9 +34,12 @@ namespace PhoenixService.ScheduleApp.Services
         {
             var appointments = await appointmentsResolver.GetNearestByRequestId(getAppointmentsM.RequestId);
 
+            if (!DateTime.TryParse(getAppointmentsM.DateWanted, out var dateWanted))
+                throw new ArgumentException("Invalid date format");
+
             // TODO: Validation
             return appointments
-                .Where(a => a.DateTimeStart.Value.Date == getAppointmentsM.DateWanted)
+                .Where(a => a.DateTimeStart.Value.Date == dateWanted)
                 .ToArray();
         }
 

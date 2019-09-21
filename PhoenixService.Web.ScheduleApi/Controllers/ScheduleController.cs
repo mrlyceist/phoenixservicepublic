@@ -23,7 +23,7 @@ namespace PhoenixService.Web.ScheduleApi.Controllers
 
         [HttpGet]
         [Route("GetAvailableAppointments")]
-        public async Task<AvailableAppointmentsM> GetAvailableAppointments(GetAppointmentsM getAppointmentsM)
+        public async Task<AvailableAppointmentsM> GetAvailableAppointments([FromUri]GetAppointmentsM getAppointmentsM)
         {
             return await scheduleAction.GetAvailableAppointments(getAppointmentsM);
         }
