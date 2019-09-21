@@ -27,15 +27,9 @@ namespace PhoenixService.Data.Repositories
 
         public Task Save(Appointment appointment)
         {
-            var duty = new Duty
-            {
-                Index = appointment.PhoenixId,
-                Doctor = appointment.Specialist.PhoenixId,
-                StartTime = appointment.DateTimeStart.Value,
-                EndTime = appointment.DateTimeEnd.Value,
-                Patient = appointment.Patient.PhoenixId,
-                Comment = config.DefaultDutyComment
-            };
+            var duty = dutyFactory.GetFromDb(appointment.PhoenixId);
+
+            duty.Patient = appointment.Patient.PhoenixId;
 
             dutyFactory.StoreIntoDb(duty);
 
