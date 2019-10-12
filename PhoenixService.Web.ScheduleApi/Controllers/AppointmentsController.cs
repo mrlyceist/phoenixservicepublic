@@ -5,6 +5,7 @@ using System.Web.Http;
 
 namespace PhoenixService.Web.ScheduleApi.Controllers
 {
+    [Authorize]
     public class AppointmentsController : ApiController
     {
         private readonly IAppointmentsAction appointmentsAction;

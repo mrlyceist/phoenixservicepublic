@@ -5,10 +5,8 @@ namespace PhoenixService.Web.ScheduleApi
 {
     public class WebLightinjectConfig
     {
-        public static void Register(HttpConfiguration config)
+        public static void Register(HttpConfiguration config, ServiceContainer serviceContainer)
         {
-            var containerOptions = new ContainerOptions { EnablePropertyInjection = false };
-            var serviceContainer = new ServiceContainer(containerOptions);
             serviceContainer.RegisterApiControllers();
             serviceContainer.RegisterTypes();
 

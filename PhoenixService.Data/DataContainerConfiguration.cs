@@ -31,10 +31,14 @@ namespace PhoenixService.Data
             container.Register<IPatientRepository, PatientRepository>();
             container.Register<IIvoiceTaskRepository, IVoiceTaskRepository>();
             container.Register<ISpecialTaskRepository, SpecialTaskRepository>();
+            container.Register<IUserRepository, UserRepository>();
+            container.Register<IClientRepository, ClientRepository>();
             // Resolvers
             container.Register<IAppointmentsResolver, AppointmentsResolver>();
             container.Register<IPatientResolver, PatientResolver>();
             container.Register<ISpecialistResolver, SpecialistResolver>();
+            container.Register<IUserResolver, UserResolver>();
+            container.Register<IClientReslover, ClientReslover>();
             // Miscellaneous
             container.Register<IStore, Store>();
             // NCore: Miscellaneous

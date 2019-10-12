@@ -4,6 +4,7 @@ using System.Web.Http;
 
 namespace PhoenixService.Web.ScheduleApi.Controllers
 {
+    [Authorize]
     public class TestController : ApiController
     {
         private readonly ITestAction testAction;

@@ -1,5 +1,4 @@
 ﻿using LightInject;
-using PhoenixService.Data.Interfaces;
 using PhoenixService.ScheduleApp.Actions;
 using PhoenixService.ScheduleApp.Builders;
 using PhoenixService.ScheduleApp.Services;
@@ -23,6 +22,7 @@ namespace PhoenixService.ScheduleApp
             // Services
             container.Register<IAppointmentsService, AppointmentsService>();
             container.Register<IVoiceServiceTaskService, VoiceServiceTaskService>();
+            container.Register<IAuthenticationService, AuthenticationService>();
         }
     }
 }
