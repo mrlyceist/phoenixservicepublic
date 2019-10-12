@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PhoenixService.Data.Interfaces.Repositories;
+﻿using PhoenixService.Data.Interfaces.Repositories;
 using PhoenixService.Data.Interfaces.Resolvers;
 using PhoenixService.Domain;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace PhoenixService.Data.Resolvers
@@ -16,10 +16,10 @@ namespace PhoenixService.Data.Resolvers
             this.clientRepository = clientRepository;
         }
 
-        public async Task<Client> GetByClientId(string id)
+        public Task<Client> GetByClientId(string id)
         {
-            return await clientRepository.Query()
-                .FirstOrDefaultAsync(c => string.Equals(c.Id.ToString(), id, StringComparison.InvariantCultureIgnoreCase));
+            return Task.FromResult(clientRepository.Query()
+                .FirstOrDefault(c => string.Equals(c.Id.ToString(), id, StringComparison.InvariantCultureIgnoreCase)));
         }
     }
 }

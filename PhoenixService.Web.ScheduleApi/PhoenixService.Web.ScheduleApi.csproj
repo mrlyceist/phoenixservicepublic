@@ -315,10 +315,6 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PhoenixService.ApiInfrastructure\PhoenixService.ApiInfrastructure.csproj">
-      <Project>{A0385C9D-843F-40AE-993E-A6ADE0772D4D}</Project>
-      <Name>PhoenixService.ApiInfrastructure</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PhoenixService.Data.Interfaces\PhoenixService.Data.Interfaces.csproj">
       <Project>{B7D13226-FCB9-492E-B008-8DCABDC05CF9}</Project>
       <Name>PhoenixService.Data.Interfaces</Name>

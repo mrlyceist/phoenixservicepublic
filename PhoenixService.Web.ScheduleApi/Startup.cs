@@ -3,6 +3,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
+using PhoenixService.ScheduleApp.Specifications.Services;
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -29,7 +30,10 @@ namespace PhoenixService.Web.ScheduleApi
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            var authorizationServerProvider = serviceContainer.GetInstance<TokenBasedAuthorizationServerProvider>();
+            //var authorizationServerProvider = serviceContainer.GetInstance<TokenBasedAuthorizationServerProvider>();
+            var authService = serviceContainer.GetInstance<IAuthenticationService>();
+            var authorizationServerProvider = new TokenBasedAuthorizationServerProvider(authService);
+
             var authOptions = new OAuthAuthorizationServerOptions
             {
                 AllowInsecureHttp = true,

@@ -1,5 +1,4 @@
 ﻿using LightInject;
-using PhoenixService.ApiInfrastructure;
 using PhoenixService.Data;
 using PhoenixService.Data.Interfaces;
 using PhoenixService.ScheduleApp;
@@ -15,7 +14,6 @@ namespace PhoenixService.Web.ScheduleApi
             container.RegisterAppDependencies();
             container.RegisterDataDependencies();
             container.EnableAutoFactories();
-            container.RegisterAutoFactory<IActionFactory>();
         }
     }
 }
