@@ -4,6 +4,7 @@ using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using PhoenixService.ScheduleApp.Specifications.Services;
+using Serilog;
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -30,7 +31,7 @@ namespace PhoenixService.Web.ScheduleApi
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //var authorizationServerProvider = serviceContainer.GetInstance<TokenBasedAuthorizationServerProvider>();
+
             var authService = serviceContainer.GetInstance<IAuthenticationService>();
             var authorizationServerProvider = new TokenBasedAuthorizationServerProvider(authService);
 
@@ -45,6 +46,12 @@ namespace PhoenixService.Web.ScheduleApi
             app.UseOAuthAuthorizationServer(authOptions);
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
             app.UseCors(CorsOptions.AllowAll);
+
+            Log.Logger = new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .CreateLogger();
+
+            app.Use(new Func<AppFunc>)
         }
     }
 }
