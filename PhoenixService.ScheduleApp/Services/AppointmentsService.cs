@@ -1,6 +1,7 @@
 ﻿using PhoenixService.Data.Interfaces.Repositories;
 using PhoenixService.Data.Interfaces.Resolvers;
 using PhoenixService.Domain;
+using PhoenixService.Domain.Exceptions;
 using PhoenixService.ScheduleApp.Dto;
 using PhoenixService.ScheduleApp.Specifications.Services;
 using System;
@@ -28,6 +29,9 @@ namespace PhoenixService.ScheduleApp.Services
         {
             var appointments = await appointmentsResolver.GetNearestByRequestId(requestId);
 
+            if (appointments.Length == 0)
+                throw new NotFoundException($"No appointments for requestId {requestId}");
+
             var nearest = appointments.First();
 
             return nearest;
@@ -38,9 +42,8 @@ namespace PhoenixService.ScheduleApp.Services
             var appointments = await appointmentsResolver.GetNearestByRequestId(getAppointmentsM.RequestId);
 
             if (!DateTime.TryParse(getAppointmentsM.DateWanted, out var dateWanted))
-                throw new ArgumentException("Invalid date format");
+                throw new BadRequestException("Invalid date format");
 
-            // TODO: Validation
             return appointments
                 .Where(a => a.DateTimeStart.Value.Date == dateWanted)
                 .ToArray();
@@ -55,7 +58,8 @@ namespace PhoenixService.ScheduleApp.Services
 
             if (appointment == null)
                 return false;
-            appointment.Patient = patient;
+
+            appointment.Patient = patient ?? throw new Exception($"Patient for request {takeAppointmentM.RequestId} not found");
 
             await appointmentRepository.Save(appointment);
 

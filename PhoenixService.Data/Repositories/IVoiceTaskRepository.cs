@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace PhoenixService.Data.Repositories
 {
+    // ReSharper disable once InconsistentNaming
     internal class IVoiceTaskRepository : IIvoiceTaskRepository
     {
         private readonly StoreContext context;

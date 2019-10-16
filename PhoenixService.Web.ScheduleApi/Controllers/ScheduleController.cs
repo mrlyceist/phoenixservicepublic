@@ -22,6 +22,9 @@ namespace PhoenixService.Web.ScheduleApi.Controllers
         [Route("GetNearestAppointments")]
         public async Task<SpecialistWithScheduleM> GetNearestAppointments(string requestId)
         {
+            logger.LogInformation($"{GetType()}: Identity: {RequestContext.Principal.Identity.Name}," +
+                                  $" requestId: {requestId}");
+
             return await scheduleAction.GetNearestAppointments(requestId);
         }
 
@@ -29,7 +32,8 @@ namespace PhoenixService.Web.ScheduleApi.Controllers
         [Route("GetAvailableAppointments")]
         public async Task<AvailableAppointmentsM> GetAvailableAppointments([FromUri]GetAppointmentsM getAppointmentsM)
         {
-            logger.LogInformation($"{GetType()}: Identity: {RequestContext.Principal.Identity}, params: {getAppointmentsM}");
+            logger.LogInformation($"{GetType()}: Identity: {RequestContext.Principal.Identity.Name}," +
+                                  $" requestId: {getAppointmentsM.RequestId}, date: {getAppointmentsM.DateWanted}");
 
             return await scheduleAction.GetAvailableAppointments(getAppointmentsM);
         }

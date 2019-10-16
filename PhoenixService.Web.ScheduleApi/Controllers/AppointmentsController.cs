@@ -7,6 +7,7 @@ using System.Web.Http;
 namespace PhoenixService.Web.ScheduleApi.Controllers
 {
     [Authorize]
+    [WrapException]
     public class AppointmentsController : ApiController
     {
         private readonly IAppointmentsAction appointmentsAction;
@@ -23,7 +24,8 @@ namespace PhoenixService.Web.ScheduleApi.Controllers
         public async Task<bool> TakeAppointment(TakeAppointmentM takeAppointmentM)
         {
             logger.LogInformation(
-                $"{GetType()}: Identity: {RequestContext.Principal.Identity}, params: {takeAppointmentM}");
+                $"{GetType()}: Identity: {RequestContext.Principal.Identity.Name}, " +
+                $"requestId: {takeAppointmentM.RequestId}, duty: {takeAppointmentM.AppointmentId}");
 
             return await appointmentsAction.TakeAppointment(takeAppointmentM);
         }

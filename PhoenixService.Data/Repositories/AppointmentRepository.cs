@@ -3,6 +3,7 @@ using NCore.Specifications.Factories;
 using PhoenixService.Data.Interfaces;
 using PhoenixService.Data.Interfaces.Repositories;
 using PhoenixService.Domain;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -28,6 +29,8 @@ namespace PhoenixService.Data.Repositories
         public Task Save(Appointment appointment)
         {
             var duty = dutyFactory.GetFromDb(appointment.PhoenixId);
+            if (duty == null)
+                throw new Exception($"Duty {appointment.PhoenixId} is not found");
 
             duty.Patient = appointment.Patient.PhoenixId;
 

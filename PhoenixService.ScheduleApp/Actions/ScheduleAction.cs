@@ -1,4 +1,5 @@
-﻿using PhoenixService.ScheduleApp.Dto;
+﻿using PhoenixService.Domain.Exceptions;
+using PhoenixService.ScheduleApp.Dto;
 using PhoenixService.ScheduleApp.Specifications.Actions;
 using PhoenixService.ScheduleApp.Specifications.Builders;
 using PhoenixService.ScheduleApp.Specifications.Services;
@@ -23,6 +24,9 @@ namespace PhoenixService.ScheduleApp.Actions
 
         public async Task<SpecialistWithScheduleM> GetNearestAppointments(string requestId)
         {
+            if (string.IsNullOrWhiteSpace(requestId))
+                throw new BadRequestException("Request Id is required");
+
             var nearestAppointment = await appointmentsService.GetNearestByRequestIdAsync(requestId);
 
             return specialistWithScheduleMBuilder.Build(nearestAppointment);
@@ -30,6 +34,9 @@ namespace PhoenixService.ScheduleApp.Actions
 
         public async Task<AvailableAppointmentsM> GetAvailableAppointments(GetAppointmentsM getAppointmentsM)
         {
+            if (string.IsNullOrWhiteSpace(getAppointmentsM.RequestId))
+                throw new BadRequestException("Request Id is required");
+
             var appintments = await appointmentsService.GetAvailableByDate(getAppointmentsM);
 
             return availableAppointmentsMBuilder.Build(getAppointmentsM.RequestId, appintments);

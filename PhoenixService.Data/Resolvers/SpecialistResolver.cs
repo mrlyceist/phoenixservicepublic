@@ -26,9 +26,11 @@ namespace PhoenixService.Data.Resolvers
         {
             var employee = employeeFactory.GetFromDb(phoenixId);
             if (employee == null)
-                throw new Exception("Specialist not found");
+                throw new Exception($"Specialist {phoenixId} not found");
 
             var speciality = specialtyFactory.GetFromDb(employee.SpecialtyId);
+            if (speciality == null)
+                throw new Exception($"Speciality {employee.SpecialtyId} not found for specialist {phoenixId}");
 
             var specialist = specialistFactory.Create(employee.IndCode, employee.FirstLastName, speciality.Name);
 
