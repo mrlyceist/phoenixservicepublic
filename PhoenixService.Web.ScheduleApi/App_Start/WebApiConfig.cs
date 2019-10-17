@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace PhoenixService.Web.ScheduleApi
 {
@@ -13,6 +10,8 @@ namespace PhoenixService.Web.ScheduleApi
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
+            config.Filters.Add(new WrapExceptionAttribute());
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
