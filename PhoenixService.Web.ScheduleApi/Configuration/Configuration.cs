@@ -3,9 +3,9 @@ using PhoenixService.ScheduleApp;
 using System;
 using System.Configuration;
 
-namespace PhoenixService.Web.ScheduleApi
+namespace PhoenixService.Web.ScheduleApi.Configuration
 {
-    public class Configuration : IAppConfig, IDataConfiguration
+    public class Configuration : IApiConfig, IAppConfig, IDataConfiguration
     {
         public Configuration()
         {
@@ -21,6 +21,7 @@ namespace PhoenixService.Web.ScheduleApi
             Tag = ConfigurationManager.AppSettings["Tag"];
             DefaultDutyComment = ConfigurationManager.AppSettings["DefaultDutyComment"];
             PhoenixDbPath = ConfigurationManager.AppSettings["PhoenixDbPath"];
+            IsProdiction = bool.Parse(ConfigurationManager.AppSettings["IsProduction"]);
         }
 
         public string PatientName { get; }
@@ -35,5 +36,6 @@ namespace PhoenixService.Web.ScheduleApi
         public string Tag { get; }
         public string PhoenixDbPath { get; }
         public string DefaultDutyComment { get; }
+        public bool IsProdiction { get; }
     }
 }

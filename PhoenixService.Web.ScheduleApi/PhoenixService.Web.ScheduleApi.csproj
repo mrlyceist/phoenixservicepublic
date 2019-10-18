@@ -273,7 +273,8 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="App_Start\WebLightinjectConfig.cs" />
-    <Compile Include="Configuration.cs" />
+    <Compile Include="Configuration\Configuration.cs" />
+    <Compile Include="Configuration\IApiConfig.cs" />
     <Compile Include="Controllers\AppointmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />

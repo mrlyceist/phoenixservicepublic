@@ -4,6 +4,7 @@ using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using PhoenixService.ScheduleApp.Specifications.Services;
+using PhoenixService.Web.ScheduleApi.Configuration;
 using Serilog;
 using Serilog.Context;
 using System;
@@ -23,11 +24,6 @@ namespace PhoenixService.Web.ScheduleApi
         {
             Environment.SetEnvironmentVariable("BASEDIR", AppDomain.CurrentDomain.BaseDirectory);
 
-            Log.Logger = new LoggerConfiguration()
-                .ReadFrom.AppSettings()
-                .Enrich.FromLogContext()
-                .CreateLogger();
-
             var containerOptions = new ContainerOptions { EnablePropertyInjection = false };
             var serviceContainer = new ServiceContainer(containerOptions);
 
@@ -40,6 +36,9 @@ namespace PhoenixService.Web.ScheduleApi
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            var apiConfig = serviceContainer.GetInstance<IApiConfig>();
+            if (!apiConfig.IsProdiction)
+                GlobalConfiguration.Configure(SwaggerConfig.Register);
 
             var authService = serviceContainer.GetInstance<IAuthenticationService>();
             var authorizationServerProvider = new TokenBasedAuthorizationServerProvider(authService);
@@ -61,6 +60,24 @@ namespace PhoenixService.Web.ScheduleApi
                 using (LogContext.PushProperty("RequestId", Guid.NewGuid()))
                     await next.Invoke(env);
             })));
+
+            app.Use(async (owinContext, next) =>
+            {
+                var userName = owinContext.Request.User.Identity.IsAuthenticated
+                    ? owinContext.Request.User.Identity.Name
+                    : "anonymous";
+                LogContext.PushProperty("User", userName);
+
+                var ip = owinContext.Request.RemoteIpAddress;
+                LogContext.PushProperty("IP", !string.IsNullOrEmpty(ip) ? ip : "unknown");
+
+                await next.Invoke();
+            });
+
+            Log.Logger = new LoggerConfiguration()
+                .ReadFrom.AppSettings()
+                .Enrich.FromLogContext()
+                .CreateLogger();
 
             Log.Logger.Information("Application started");
         }

@@ -3,7 +3,7 @@ using WebActivatorEx;
 using PhoenixService.Web.ScheduleApi;
 using Swashbuckle.Application;
 
-[assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
+//[assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
 namespace PhoenixService.Web.ScheduleApi
 {
@@ -250,6 +250,13 @@ namespace PhoenixService.Web.ScheduleApi
                         //
                         //c.EnableApiKeySupport("apiKey", "header");
                     });
+        }
+
+        public static void Register(HttpConfiguration config)
+        {
+            config
+                .EnableSwagger(c => c.SingleApiVersion("v1", "PhoenixService.Web.ScheduleApi"))
+                .EnableSwaggerUi();
         }
     }
 }

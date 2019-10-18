@@ -21,7 +21,7 @@ namespace PhoenixService.Web.ScheduleApi.Controllers
         [Route("CreateTask")]
         public async Task CreateTask(string phoneNumber)
         {
-            logger.LogInformation($"{GetType()}: Identity: {RequestContext.Principal.Identity}, params: {phoneNumber}");
+            logger.LogInformation($"{GetType()}: Identity: {@RequestContext.Principal.Identity}, params: {phoneNumber}");
 
             await testAction.ScheduleContact(phoneNumber);
         }
